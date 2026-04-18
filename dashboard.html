@@ -4,8 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>Dashboard</h1>
+    
+    <main class="h-screen w-full pt-5 bg-slate-100">
+        <section class="max-w-sm min-h-96 bg-white  mx-auto shadow-md border border-gray-200 rounded-xl p-2.5">
+
+            <!-- Nav Section -->
+            <div class="flex justify-between border-b border-gray-300 py-2.5">
+                <div>
+                    <h1 class="font-bold text-2xl text-error">$ <span>20000</span></h1>
+                    <p class="text-xs text-gray-400">available Balance</p>
+                </div>
+                <div>
+                    <button class="btn btn-soft border rounded-xl border-accent btn-accent"><i class="fa-solid fa-person-walking-arrow-loop-left"></i> Logout</button>
+                </div>
+            </div>
+
+
+            <!-- Welcome Text section -->
+
+            <div class="py-5 ">
+                <h1 class="text-xl font-bold uppercase text-center text-gray-600"> Welcome to your home</h1>
+            </div>
+
+            <!-- Feature Buttons Section -->
+
+            <div class="grid grid-cols-3 gap-2">
+                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><span><i class="fa-solid text-lg fa-sack-dollar text-warning mb-2"></i></span><br> Add Money</div>
+                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-hands-asl-interpreting text-warning mb-2"></i> <br> Cashout</div>
+                <div class="text-xs p-2.5  text-gray-700  shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-transfer text-warning mb-2"></i><br> Transfer Money</div>
+                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-money-check-dollar text-warning mb-2"></i> <br> Pay Bill</div>
+                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-trend-up text-warning mb-2"></i> <br> Get Bonus</div>
+                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-comments-dollar text-warning mb-2"></i> <br> Transaction</div>
+            </div>
+
+            <!-- Add Money Form -->
+
+            <div class="py-8">
+                
+                <fieldset class="fieldset mx-auto bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                    <h1 class="text-lg font-bold text-center">Add Money</h1>
+                    <label class="label">Select Bank</label>
+                   <select class="select select-ghost bg-white">
+
+                        <option disabled selected>Select Bank</option>
+                        <option>Dutch Bangla</option>
+                        <option>Islami Bank</option>
+                        <option>Sonali Bank</option>
+                    </select>
+
+                    <label class="label">Account</label>
+                    <input type="text" class="input" placeholder="Account Number" />
+
+                    <label class="label">Amount</label>
+                    <input type="text" class="input" placeholder="Amount" />
+
+                    <label class="label">Pin</label>
+                    <input type="text" class="input" placeholder="Pin Number" />
+                    </fieldset>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="src/dashboard.js"></script>
 </body>
 </html>
