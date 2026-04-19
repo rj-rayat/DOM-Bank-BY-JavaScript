@@ -16,7 +16,7 @@
             <!-- Nav Section -->
             <div class="flex justify-between border-b border-gray-300 py-2.5">
                 <div>
-                    <h1 class="font-bold text-2xl text-error">$ <span>20000</span></h1>
+                    <h1 class="font-bold text-2xl text-error">$ <span id="current-balance">20000</span></h1>
                     <p class="text-xs text-gray-400">available Balance</p>
                 </div>
                 <div>
@@ -34,8 +34,8 @@
             <!-- Feature Buttons Section -->
 
             <div class="grid grid-cols-3 gap-2">
-                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><span><i class="fa-solid text-lg fa-sack-dollar text-warning mb-2"></i></span><br> Add Money</div>
-                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-hands-asl-interpreting text-warning mb-2"></i> <br> Cashout</div>
+                <div id="add-money-feature-btn" class="text-xs p-2.5 bg-amber-300  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><span><i class="fa-solid text-lg fa-sack-dollar text-warning mb-2"></i></span><br> Add Money</div>
+                <div id="cashout-btn" class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-hands-asl-interpreting text-warning mb-2"></i> <br> Cashout</div>
                 <div class="text-xs p-2.5  text-gray-700  shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-transfer text-warning mb-2"></i><br> Transfer Money</div>
                 <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-money-check-dollar text-warning mb-2"></i> <br> Pay Bill</div>
                 <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-trend-up text-warning mb-2"></i> <br> Get Bonus</div>
@@ -44,12 +44,12 @@
 
             <!-- Add Money Form -->
 
-            <div class="py-8">
+            <div id="add-money-form" class="py-8">
                 
-                <fieldset class="fieldset mx-auto bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                <form id="form" class="fieldset mx-auto bg-base-200 border-base-300 rounded-box w-xs border p-4">
                     <h1 class="text-lg font-bold text-center">Add Money</h1>
                     <label class="label">Select Bank</label>
-                   <select class="select select-ghost bg-white">
+                   <select required id="bank-name-option" class="select select-ghost bg-white">
 
                         <option disabled selected>Select Bank</option>
                         <option>Dutch Bangla</option>
@@ -58,15 +58,34 @@
                     </select>
 
                     <label class="label">Account</label>
-                    <input type="text" class="input" placeholder="Account Number" />
+                    <input required id="account-number" type="text" class="input" placeholder="Account Number" />
 
                     <label class="label">Amount</label>
-                    <input type="text" class="input" placeholder="Amount" />
+                    <input required id="amount" type="text" class="input" placeholder="Amount" />
 
                     <label class="label">Pin</label>
-                    <input type="text" class="input" placeholder="Pin Number" />
-                    </fieldset>
+                    <input required id="pin-number" type="text" class="input" placeholder="Pin Number" />
+                    <input id="add-money-btn" class="btn btn-success btn-outline" type="submit" value="Add Money">
+                    </form>
             </div>
+
+            <!-- Cashout Form -->
+             <div id="cashout-form" class="hidden">
+                 <form id="form" class="fieldset mx-auto bg-base-200 border-base-300 rounded-box w-xs border p-4">
+                    <h1 class="text-lg font-bold text-center">Cashout</h1>
+                    
+                  
+                    <label class="label">Agent Number</label>
+                    <input required id="agent-number" type="text" class="input" placeholder="Agent Number" />
+
+                    <label class="label">Amount</label>
+                    <input required id="cashout-amount" type="text" class="input" placeholder="Casout Amount" />
+
+                    <label class="label">Pin</label>
+                    <input required id="cashout-pin-number" type="text" class="input" placeholder="Pin Number" />
+                    <input id="cashout-form-btn" class="btn btn-success btn-outline" type="submit" value="Withdraw">
+                    </form>
+             </div>
         </section>
 
         
