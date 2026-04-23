@@ -39,7 +39,7 @@
                 <div class="text-xs p-2.5  text-gray-700  shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-transfer text-warning mb-2"></i><br> Transfer Money</div>
                 <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-money-check-dollar text-warning mb-2"></i> <br> Pay Bill</div>
                 <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"><i class="fa-solid text-lg fa-money-bill-trend-up text-warning mb-2"></i> <br> Get Bonus</div>
-                <div class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-comments-dollar text-warning mb-2"></i> <br> Transaction</div>
+                <div id="transaction-feature-btn" class="text-xs p-2.5  text-gray-700 shadow-md border border-gray-300 rounded-xl text-center cursor-pointer"> <i class="fa-solid text-lg fa-comments-dollar text-warning mb-2"></i> <br> Transaction</div>
             </div>
 
             <!-- Add Money Form -->
@@ -86,7 +86,26 @@
                     <input id="cashout-form-btn" class="btn btn-success btn-outline" type="submit" value="Withdraw">
                     </form>
              </div>
+
+             <!-- Transaction History -->
+
+             <div id="transaction-section" class="hidden p-2.5">
+               
+             </div>
         </section>
+
+        <!-- Modal Section -->
+         <!-- You can open the modal using ID.showModal() method -->
+            <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+            <dialog id="my_modal_3" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 id="modal-heading" class="text-lg font-bold"></h3>
+                <p class="py-4"></p>
+            </div>
+            </dialog>
 
         
     </main>

@@ -24,6 +24,31 @@ document.getElementById("add-money-btn").addEventListener("click", function(e){
     const totalBalance = currentBalance + userAmount
 
     document.getElementById('current-balance').innerText= totalBalance
+    document.getElementById("my_modal_3").showModal()
+    document.getElementById("modal-heading").innerText = "Successfully Added"
+
+     const transSection = document.getElementById("transaction-section")
+    const date = new Date()
+    const localDate = date.toString
+
+    const div = document.createElement("div")
+    div.classList.add("shadow-lg")
+    div.classList.add("rounded-xl")
+    div.classList.add("rounded-xl")
+    div.classList.add("p-2.5")
+    div.classList.add("border")
+    div.classList.add("border-warning")
+    div.classList.add("mt-2")
+    div.classList.add("border-outline")
+
+    
+
+    const p = document.createElement("p")
+    p.innerText = `${userAmount} tk added at ${date}`
+    div.appendChild(p)
+
+   
+    transSection.appendChild(div)
    }
 
 })
@@ -31,6 +56,7 @@ document.getElementById("add-money-btn").addEventListener("click", function(e){
 function toggleButton (id){
   document.getElementById('add-money-form').classList.add("hidden")
   document.getElementById("cashout-form").classList.add("hidden")
+  document.getElementById("transaction-section").classList.add("hidden")
   document.getElementById(id).classList.remove("hidden")
   
 }
@@ -39,8 +65,12 @@ function toggleButton (id){
 function activeButton(id){
   document.getElementById("add-money-feature-btn").classList.remove("bg-amber-300")
   document.getElementById("cashout-btn").classList.remove("bg-amber-300")
+  document.getElementById("transaction-feature-btn").classList.remove("bg-amber-300")
   document.getElementById(id).classList.add("bg-amber-300")
 }
+
+
+
 
 document.getElementById('add-money-feature-btn').addEventListener('click', function(){
   toggleButton("add-money-form")
@@ -49,6 +79,10 @@ document.getElementById('add-money-feature-btn').addEventListener('click', funct
 document.getElementById('cashout-btn').addEventListener('click', function(){
   toggleButton("cashout-form")
   activeButton("cashout-btn")
+})
+document.getElementById('transaction-feature-btn').addEventListener('click', function(){
+  toggleButton("transaction-section")
+  activeButton("transaction-feature-btn")
 })
 
 
@@ -78,6 +112,32 @@ document.getElementById("cashout-form-btn").addEventListener("click", function(e
     const totalBalance = currentBalance - userAmount
 
     document.getElementById('current-balance').innerText= totalBalance
+    
+    document.getElementById("my_modal_3").showModal()
+    document.getElementById("modal-heading").innerText = "Cashout Successfully"
+
+    const transSection = document.getElementById("transaction-section")
+    const date = new Date()
+    const localDate = date.toString
+
+    const div = document.createElement("div")
+    div.classList.add("shadow-lg")
+    div.classList.add("rounded-xl")
+    div.classList.add("rounded-xl")
+    div.classList.add("p-2.5")
+    div.classList.add("border")
+    div.classList.add("border-warning")
+    div.classList.add("mt-2")
+    div.classList.add("border-outline")
+
+    
+
+    const p = document.createElement("p")
+    p.innerText = `${userAmount} tk cashout at ${date}`
+    div.appendChild(p)
+
+   
+    transSection.appendChild(div)
    }
 
 })
